@@ -1,0 +1,52 @@
+﻿@page
+@model AdminPage_JagdeepSingh.Pages.Admin.ProductCreateModel
+@{
+    ViewData["Title"] = "Admin page";
+}
+<div class="create-form, border-white">
+    <form method="post">
+        <hidden asp-for="Product.ID" />
+        <h1 class="font-weight-bold"> Products </h1>
+        <div>
+            <label asp-for="Product.productName"></label>
+            <div>
+                <input asp-for="Product.productName" />
+                <span asp-validation-for="Product.productName"></span>
+            </div>
+        </div>
+        <div>
+            <label asp-for="Product.unitsInStocks"></label>
+            <div>
+                <input asp-for="Product.unitsInStocks" />
+                <span asp-validation-for="Product.unitsInStocks"></span>
+            </div>
+        </div>
+            <div>
+                <label asp-for="Product.unitPrice"></label>
+                <div>
+                    <input asp-for="Product.unitPrice" />
+                    <span asp-validation-for="Product.unitPrice"></span>
+                </div>
+             </div>
+                <div>
+                    <label asp-for="Product.dicounted"></label>
+                    <div>
+                        <input asp-for="Product.dicounted" />
+                        <span asp-validation-for="Product.dicounted"></span>
+                    </div>
+                 </div>
+
+                    <div asp-validation-summary="All">
+                        <label class="card-title, font-weight-bold"> Error Summary</label>
+                    </div>
+                    <input type="submit" value="Create">
+</form>
+</div>
+@section scripts
+{
+    <script src="~/lib/jquery-validation/dist/additional-methods.min.js"></script>
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

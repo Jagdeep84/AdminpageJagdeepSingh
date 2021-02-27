@@ -1,0 +1,39 @@
+﻿@page
+@model AdminPage_JagdeepSingh.Pages.Admin.Shipper.ShipperCreateModel
+@{
+    ViewData["Title"] = "Admin page";
+}
+<div class="create-form, border-white">
+    <form method="post">
+        <hidden asp-for="Shipper.ID" />
+        <h1 class="font-weight-bold"> Shipper </h1>
+        <div>
+            <label asp-for="Shipper.companyName"></label>
+            <div>
+                <input asp-for="Shipper.companyName" />
+                <span asp-validation-for="Shipper.companyName"></span>
+            </div>
+        </div>
+        <div>
+            <label asp-for="Shipper.phone"></label>
+
+            <div>
+                <input asp-for="Shipper.phone" />
+                <span asp-validation-for="Shipper.phone"></span>
+            </div>
+        </div>
+
+        <div asp-validation-summary="All">
+            <label class="card-title, font-weight-bold"> Error Summary</label>
+        </div>
+        <input type="submit" value="Create">
+    </form>
+</div>
+@section scripts
+{
+    <script src="~/lib/jquery-validation/dist/additional-methods.min.js"></script>
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

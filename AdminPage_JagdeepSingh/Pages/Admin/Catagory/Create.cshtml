@@ -1,0 +1,39 @@
+﻿@page
+@model AdminPage_JagdeepSingh.Pages.Admin.Catagory.CatagoryCreateModel
+@{
+    ViewData["Title"] = "Admin page";
+}
+<div class="create-form, border-white">
+    <form method="post">
+        <h1 class="font-weight-bold"> Categories </h1>
+        <hidden asp-for="Category.ID" />
+
+        <div>
+            <label asp-for="Category.categoryName"></label>
+            <div>
+                <input asp-for="Category.categoryName" />
+                <span asp-validation-for="Category.categoryName"></span>
+            </div>
+        </div>
+        <div>
+            <label asp-for="Category.description"></label>
+            <div>
+                <input asp-for="Category.description" />
+                <span asp-validation-for="Category.description"></span>
+            </div>
+        </div>
+
+            <div asp-validation-summary="All">
+                <label class="card-title, font-weight-bold"> Error Summary</label>
+            </div>
+            <input type="submit" value="Create">
+</form>
+</div>
+@section scripts
+{
+    <script src="~/lib/jquery-validation/dist/additional-methods.min.js"></script>
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

@@ -1,0 +1,30 @@
+﻿
+@page
+@using AdminPage_JagdeepSingh.Models;
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    int ProdCount = (int)ViewData["ProdCount"];
+    List<Product> ProdList = (List<Product>)ViewData["ProdList"];
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+<h5 class="font-weight-bold">Product Detail</h5>
+@foreach (var prod in ProdList)
+{
+    <div class="Products">
+        <div class="Products info">
+            
+            <div> Name: <span> @prod.productName</span></div>
+            <div> Price: <span>@prod.unitPrice</span></div>
+            <div>Discounted: <span>@prod.dicounted</span></div>
+            <div>
+                Quantity: <span>@prod.unitsInStocks</span>
+            </div>
+
+        </div>
+    </div>
+}
